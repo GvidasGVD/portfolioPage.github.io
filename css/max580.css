@@ -1,0 +1,19 @@
+@media (max-width: 580px) {
+
+
+	h1 {
+		font-size: 2rem;
+	}
+	#form-container {
+		padding: 1.5rem;
+	}
+
+	footer {
+		padding: 3rem 0;
+	}
+
+    footer .footer-subscribe ul li {
+        display: inline-block;
+        margin: 0;
+    }
+}
