@@ -197,7 +197,6 @@ header ul.is-sticky li a.active {
 }
 
 #top-content h1:hover {
-	transform: scale(1.1);
 	transition: 0.4s;
 }
 
@@ -231,6 +230,7 @@ header ul.is-sticky li a.active {
 }
 
 #currentPossition {
+	font-size: 30px;
     opacity: 0;
     cursor: pointer;
 	transition: 1s;
@@ -396,6 +396,7 @@ header ul.is-sticky li a.active {
 
 /* Start: Works */
 #works img{
+	margin: 10px 0;
 	width: 288px;
 	height: 162px;
 	min-width: 288px;
@@ -408,6 +409,7 @@ header ul.is-sticky li a.active {
 }
 
 #works h4 {
+	margin-top: 10px;
 	font-size: 22px;
 	font-weight: 700;
 	padding-bottom: 10px;
@@ -442,7 +444,7 @@ header ul.is-sticky li a.active {
 
 .blured-left-side {
 	position: absolute;
-	top: 16px;
+	top: 26px;
 	left: 0;
 	width: 40px;
 	height: 162px;

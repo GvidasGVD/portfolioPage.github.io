@@ -16,4 +16,21 @@
         display: inline-block;
         margin: 0;
     }
+
+	#top-content h1{
+		font-size: 36px;
+	}
+
+	#top-content h2:hover {
+		transform: scale(1.1);
+		transition: 0.4s;
+	}
+
+	#currentPossition {
+		font-size: 26px;
+	}
+
+	.about-me-images-container {
+		margin: 0 auto;
+	}
 }
