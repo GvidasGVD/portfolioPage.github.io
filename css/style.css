@@ -416,14 +416,12 @@ header ul.is-sticky li a.active {
 }
 
 #works i {
-	color: rgb(173, 173, 173);
 	font-size: 35px;
 	padding: 5px;
 }
 
-#works i:hover {
-	color: rgb(255, 255, 255);
-	text-shadow: 1px 1px 10px white;
+#works a{
+	text-decoration: none;
 }
 
 #realEstateProjectCard,
@@ -478,6 +476,27 @@ header ul.is-sticky li a.active {
 
 .projects-info a {
 	display: inline-block;
+}
+
+.project-info-link-btn {
+	display: flex;
+	background: none;
+	padding-right: 25px;
+	color: rgb(173, 173, 173);
+	align-items: center;
+	border-radius: 10px;
+
+}
+
+.project-info-link-btn:hover,
+.project-info-link-btn:hover i {
+	color: white;
+	text-shadow: 1px 1px 10px white;
+
+}
+
+.project-info-link-btn:hover a{
+	text-decoration: none;
 }
 /* End: Works */
 
