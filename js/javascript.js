@@ -102,9 +102,10 @@ $(function () {
     const animatedCard = document.querySelector(".about-me-images-container");
     const animatedCardInner = document.querySelector(".about-me-images-container-inner");
     const container = document.getElementById("aboutMeImagesContainer");
+    var divisor = 4;
     //Moving Animation Event
     animatedCard.addEventListener("mousemove", (e) => {
-        let xAxis =  (e.pageX - window.innerWidth/2) / 4;
+        let xAxis =  (e.pageX - window.innerWidth/2) / divisor;
         let yAxis = - (e.pageY - window.innerHeight/2) / 10;
         animatedCardInner.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
     });
@@ -112,7 +113,6 @@ $(function () {
     animatedCard.addEventListener("mouseenter", (e) => {
         //Popout
         container.style.transform = "translateZ(50px) scale(1.1)";
-
     });
     //Animate Out
     animatedCard.addEventListener("mouseleave", (e) => {
@@ -120,8 +120,16 @@ $(function () {
         animatedCardInner.style.transform = `rotateY(0deg) rotateX(0deg)`;
         //Popback
         container.style.transform = "translateZ(0px)";
-
     });
+
+    function setDivisorForAnimatedCard() {
+        (window.innerWidth <= 1190 && window.innerWidth >= 580)?  divisor = 15 : divisor = 4;
+        return divisor;
+    }
+
+    $( window ).resize(function() {
+        setDivisorForAnimatedCard();
+      });
 })
 
 function textAnimation() {
