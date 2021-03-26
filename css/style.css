@@ -188,6 +188,7 @@ header ul.is-sticky li a.active {
 }
 
 #top-content .top-content-fade {
+	background: rgba(0,0,0,0.7);
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -244,7 +245,7 @@ header ul.is-sticky li a.active {
 /* end: top-content sectionstyles*/
 
 /* Start: Social Links */
-.social-links a:nth-child(5){
+.social-links a:nth-child(4){
     width: 350px;
     transform: translate(-50px, 0);
 }
@@ -292,12 +293,11 @@ header ul.is-sticky li a.active {
     color: rgb(10,102,194);
 }
 
-.social-links a:nth-child(5) i{
+.social-links a:nth-child(4) i{
     color: #0ac213;
 }
 
-.social-links a:nth-child(2) i,
-.social-links a:nth-child(4) i{
+.social-links a:nth-child(2) i{
     color: white;
 }
 
@@ -482,17 +482,19 @@ header ul.is-sticky li a.active {
 	display: flex;
 	background: none;
 	padding-right: 25px;
+	margin-right: 5px;
+	margin-top: 5px;
 	color: rgb(173, 173, 173);
 	align-items: center;
 	border-radius: 10px;
-
+	transition: 0.2s;
 }
 
 .project-info-link-btn:hover,
 .project-info-link-btn:hover i {
 	color: white;
 	text-shadow: 1px 1px 10px white;
-
+	transition: 0.2s;
 }
 
 .project-info-link-btn:hover a{
@@ -527,22 +529,84 @@ header ul.is-sticky li a.active {
 	margin: auto 0;
 }
 
-.about-me-text .more-content-btn {
+.more-content-btn {
+	background-color: rgba(0,0,0,0.7);
 	position: absolute;
-	padding: 5px 5px 5px 0;
+	padding: 5px 15px;
+	border-radius: 10px;
+	color: white;
+	text-align: center;
+	z-index: 5;
+	transition: all 0.5s;
+	width: 120px;
 	cursor: pointer;
-	background: unset;
-	border:unset;
 }
 
-.about-me-text .more-content-btn:hover {
-	background: unset;
-	border:unset;
-	text-decoration: underline;
+.more-content-btn:hover{
+	box-shadow: 0 0 2px 3px white;
+	background-color: rgba(90, 90, 90, 0.7);
+}
+
+.more-content-btn span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+#firstContentBtn {
+	text-align: center;
+	z-index: 5;
+	font-size: 26px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+}
+  
+#firstContentBtn span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+
+#firstContentBtn:hover span {
+	padding-right: 25px;	
+}
+
+#firstContentBtn:hover span:after {
+	opacity: 1;
+	right: 0;
+}
+
+#secondContentBtn {
+	font-size: 18px;
+}
+
+#secondContentBtn span:before {
+	content: '\00ab';
+	position: absolute;
+	font-size: 25px;
+	opacity: 0;
+	top: -5px;
+	left: -20px;
+	transition: 0.5s;
+}
+
+#secondContentBtn:hover span {
+	padding-left: 25px;	
+}
+
+#secondContentBtn:hover span:before {
+	opacity: 1;
+	left: 0;
 }
 
 #aboutMeTextImage {
-	background: url('https://gvidasgvd.github.io/portfolioPage.github.io/images/headerBackground.jpg');
+	background: url('/images/headerBackground.jpg');
 	position: absolute;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -552,7 +616,6 @@ header ul.is-sticky li a.active {
 	height: 100%;
 	border-radius: 10px;
 	transition: 0.5s;
-	
 }
 
 .about-me-images-container {
