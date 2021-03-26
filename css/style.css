@@ -606,7 +606,7 @@ header ul.is-sticky li a.active {
 }
 
 #aboutMeTextImage {
-	background: url('/images/headerBackground.jpg');
+	background: url('https://gvidasgvd.github.io/portfolioPage.github.io/images/headerBackground.jpg');
 	position: absolute;
 	background-repeat: no-repeat;
 	background-size: cover;
