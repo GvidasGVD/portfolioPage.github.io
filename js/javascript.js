@@ -129,7 +129,12 @@ $(function () {
 
     $( window ).resize(function() {
         setDivisorForAnimatedCard();
-      });
+    });
+
+    $(".closeModalBtn").on('click', function(){
+        $("#projectsModal").fadeOut(200);
+        $("#projectsContent").removeClass("active");
+    })
 })
 
 function textAnimation() {
@@ -185,6 +190,27 @@ function readMore(e) {
     }
     $(e).hide();
 }
+
+function showProjectModal(item) {
+    switch(item) {
+        case 'first':
+            console.log('first');
+            break;
+        case 'second':
+            console.log('second');
+            break;
+        case 'third':
+            console.log('third');
+            break;
+    }
+
+    $(".popup-modal").show();
+    setTimeout(function () {
+        $("#projectsContent").addClass("active");
+        $("#projectsModal ").css("display", "flex");
+    }, 10);
+}
+
 
 
 
