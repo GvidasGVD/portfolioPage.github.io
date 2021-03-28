@@ -21,7 +21,6 @@
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 	<link rel="icon" type="image/png" sizes="16x16" href="images/GPicon.png">
 
-
 	<script type="text/javascript" src="js/javascript.js" defer></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -33,6 +32,7 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -45,6 +45,19 @@
 		<!-- <a href="#">Contact me <i class="fa fa-address-book"></i></a> -->
 		<a href="https://gvidasgvd.github.io/portfolioPage.github.io/CV Gvidas Pilelis.pdf" download>Download resume <i class="fa fa-download"></i></a>
 	</aside>
+		<!-- Start: Property listing Modal -->
+		<div class="popup-modal" id="projectsModal">
+			<div class="popup-modal-content" id="projectsContent">
+				<div class="btnPositionRight">
+					<button class="closeModalBtn">Close</button>
+				</div>
+				<div id="projectInfoBlock">
+					<p>At the momment there is no info on the content
+					</p>
+				</div>
+			</div>
+		</div>
+		<!-- End: Property listing Modal -->
 	<div id="mainPageBlock">
 		<div id="headerContainer">
 			<header>
@@ -188,8 +201,10 @@
 				<div>
 					<h3>Projects</h3>
 					<div class="d-flex flex-wrap py-3 project-card" id="realEstateProjectCard">
+						<div class="project-card-left-side" onclick="showProjectModal('first')">
 						<div class="blured-left-side"></div>
 						<img src="https://gvidasgvd.github.io/portfolioPage.github.io/images/webPagePicture.jpg">
+						</div>
 						<div class="projects-info">
 							<h4>Real Estate Web Page</h4>
 							<p>One of the first web pages created as an experiment. This is ongoing project.</p>
@@ -201,8 +216,10 @@
 						</div>
 					</div>
 					<div class="d-flex flex-wrap py-3 project-card" id="clicGameCard">
+						<div class="project-card-left-side" onclick="showProjectModal('second')">
 						<div class="blured-left-side"></div>
 						<img src="https://gvidasgvd.github.io/portfolioPage.github.io/images/gameImage.jpg">
+						</div>
 						<div class="projects-info">
 							<h4>Click Game</h4>
 							<p>One of the first click games that I created couple years ago using HTML, CSS and JS.</p>
@@ -214,8 +231,10 @@
 						</div>
 					</div>
 					<div class="d-flex flex-wrap py-3 project-card" id="portfolioPageCard">
+						<div class="project-card-left-side" onclick="showProjectModal('third')">
 						<div class="blured-left-side"></div>
 						<img src="https://gvidasgvd.github.io/portfolioPage.github.io/images/mainPage.jpg">
+						</div>
 						<div class="projects-info">
 							<h4>Portfolio Web Page</h4>
 							<p>Since my portfolio page includes several JS solutions for making this page "active" and
