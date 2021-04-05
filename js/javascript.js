@@ -223,7 +223,7 @@ function showProjectModal(item) {
             ' is to nicely present the company, which offers to the customers services like: consultation on buying, selling, investing in the' +
             ' property. Also you can find equities listed as well as agents information and contacts and of course some clients reviews.');
             $("#projectModalHeader").text('Real Estate Web Page');
-            $("#projectModalImg").attr('src', 'modalImages/nt1.jpg');
+            $("#projectModalImg").attr('src', 'https://gvidasgvd.github.io/portfolioPage.github.io/modalImages/nt1.jpg');
             break;
         case 'second':
             $("#projectModalGitHubLink").attr('href', 'https://github.com/GvidasGVD/clickMoneyGame.github.io');
@@ -232,7 +232,7 @@ function showProjectModal(item) {
             ' game is to reach $300 billion in cash by clicking the golden button and buying property, which every second gives' + 
             ' 10% profit of the equity price.');
             $("#projectModalHeader").text('Click Game');
-            $("#projectModalImg").attr('src', 'modalImages/game1.jpg');
+            $("#projectModalImg").attr('src', 'https://gvidasgvd.github.io/portfolioPage.github.io/modalImages/game1.jpg');
             break;
         case 'third':
             $("#projectModalGitHubLink").attr('href', 'https://github.com/GvidasGVD/portfolioPage.github.io');
@@ -240,7 +240,7 @@ function showProjectModal(item) {
             $("#projectModalInfoSpecificText").text('My portfolio page which provides information about my programming skills, some history' +
             ' of my working experience, my certifications and studies, and of course projects with the links. Hope you\'ve enjoyed it!');
             $("#projectModalHeader").text('Portfolio Web Page');
-            $("#projectModalImg").attr('src', 'modalImages/mainPage1.jpg');
+            $("#projectModalImg").attr('src', 'https://gvidasgvd.github.io/portfolioPage.github.io/modalImages/mainPage1.jpg');
             break;
     }
 
