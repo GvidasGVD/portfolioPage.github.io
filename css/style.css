@@ -89,6 +89,10 @@ section {
 	padding: 60px;
 }
 
+.no-link-decoration:hover {
+	text-decoration: none;
+}
+
 /* End: Global  */
 
 /* start: popup-modal */
@@ -107,6 +111,7 @@ section {
 
 
 .popup-modal-content {
+	position: relative;
 	background-color: white;
 	border-radius: 4px;
 	z-index: 4;
@@ -125,41 +130,87 @@ section {
 #projectsContent {
 	-webkit-transform: scale(0);
 	transform: scale(0);
-	width: 600px;
-	height: 400px;
+	width: 700px;
+	box-shadow: 0 0 3px 2px #7d8ee2;
+	border-radius: 12px;
+	background-color: rgb(51,51,51);
 }
 
 #projectInfoBlock{
     display: flex;
 	flex-wrap: wrap;
-	align-content: center;
-	justify-content: center;
+	align-content: flex-start;
+	justify-content: flex-start;
 	height: 100%;
     align-items: center;
     text-align: left;
-	padding: 0 30px;
 	color: rgb(182, 181, 181);
+}
+
+#projectInfoBlock img {
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
 }
 
 .btnPositionRight {
 	position: absolute;
+	border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
 	right: 0;
+	z-index: 2;
+	background-color: rgba(51, 51, 51, 0.8);
 }
 .closeModalBtn {
 	position: relative;
 	cursor: pointer;
-	background-color: white;
-	border-color: #0f284e;
-	border-radius: 4px;
+	border: 1px solid #808080;
+	border-radius: 10px;
 	box-shadow: none;
-	color: #575757;
-	margin: 10px 10px 0 0;
+	margin: 5px;
 	padding: 5px 10px;
+	background: rgb(173, 173, 173);
+	transition: 0.2s;
 }
 
 .closeModalBtn:hover {
-	background-color: #fc1f1f;
 	color: white;
+	text-shadow: 1px 1px 10px white;
+	transition: 0.2s;
+	background-color: #585858;
+	box-shadow: 0 0 2px 2px white;
+}
+
+.closeModalBtn:focus,
+.closeModalBtn:active {
+	outline: none;
+}
+
+.project-modal-link-btn {
+	display: flex;
+	background: none;
+	padding: 8px 25px 8px 8px;
+	margin: 5px 5px 20px 0;
+	color: rgb(173, 173, 173);
+	align-items: center;
+	border-radius: 10px;
+	transition: 0.05s;
+	font-size: 25px;
+	text-decoration: none;
+}
+
+.project-modal-link-btn:hover {
+	color: white;
+    text-shadow: 1px 1px 10px white;
+    transition: 0.05s;
+}
+
+.project-modal-link-btn i {
+	transition: 0.05s;
+}
+
+.project-info-text {
+	padding: 20px;
+	line-height: 1.5;
 }
 
 /* end: popup-modal */
@@ -244,7 +295,7 @@ header ul.is-sticky li a.active {
 
 /* start: top-content section styles*/
 #top-content {
-	background: url('https://gvidasgvd.github.io/portfolioPage.github.io/images/headerBackground.jpg') no-repeat;
+	background: url('https://gvidasgvd.github.io/portfolioPage.github.io/images/headerBackground.JPG') no-repeat;
 	background-size: cover;
 	position: absolute;
 	top: 0;
@@ -548,7 +599,7 @@ header ul.is-sticky li a.active {
 
 .projects-info span {
 	display: inline-block;
-	margin: 5px;
+	margin: 5px 5px 5px 0;
 	padding: 5px 15px;
 	border: 1px solid white;
 	border-radius: 10px;
@@ -584,6 +635,15 @@ header ul.is-sticky li a.active {
 
 .project-info-link-btn:hover a{
 	text-decoration: none;
+}
+
+.project-info-link-btn:active{ 
+	border: none;
+	outline: none;
+}
+
+.project-info-link-btn:focus{
+	outline: none;
 }
 /* End: Works */
 
