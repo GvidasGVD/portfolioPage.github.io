@@ -10,9 +10,45 @@ $(function () {
     let headerElem = $('header');
     let navToggle = $('#nav-toggle');
     let navMenu = $('#nav-menu');
-    $("#currentPossition").on("click", function () {
-        replayAnimatedText();
-    })
+
+    function attachEvents() {
+        $('#testimonials-slider').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            prevArrow: '<a href="#" class="slick-arrow slick-prev"><</a>',
+            nextArrow: '<a href="#" class="slick-arrow slick-next">></a>'
+        });
+
+        $(document).on('keydown', function (event) {
+            if (event.key == "Escape" && $("#projectsContent").hasClass("active")) {
+                $("#projectsModal").fadeOut(200);
+                $("#projectsContent").removeClass("active");
+            }
+        });
+
+        $(window).resize(function () {
+            setDivisorForAnimatedCard();
+        });
+
+        $(".closeModalBtn").on('click', function () {
+            $("#projectsModal").fadeOut(200);
+            $("#projectsContent").removeClass("active");
+        });
+
+        $("#currentPossition").on("click", function () {
+            replayAnimatedText();
+        });
+
+        $(document).on('click', (e) => {
+            let target = $(e.target);
+            if (target.closest('#nav-toggle').length > 0) {
+                return false;
+            }
+            navMenu.css('right', '-100%');
+        });
+    }
+
 
     navToggle.on('click', () => {
         navMenu.css('right', '0');
@@ -22,13 +58,7 @@ $(function () {
         navMenu.css('right', '-100%');
     });
 
-    $(document).on('click', (e) => {
-        let target = $(e.target);
-        if (target.closest('#nav-toggle').length > 0) {
-            return false;
-        }
-        navMenu.css('right', '-100%');
-    });
+
 
     $('#mainPageBlock').scroll(() => {
         let scrollTop = $('#mainPageBlock').scrollTop();
@@ -43,50 +73,50 @@ $(function () {
             navToggle.find('.strip').css('background-color', '#fff');
         }
 
-        if(scrollTop < 600){
-            if($("#realEstateProjectCard").css('left') === '0px') {
-                $("#realEstateProjectCard").css({'left':'-2000px', 'opacity': 0});
+        if (scrollTop < 600) {
+            if ($("#realEstateProjectCard").css('left') === '0px') {
+                $("#realEstateProjectCard").css({ 'left': '-2000px', 'opacity': 0 });
             }
         }
 
-        if(scrollTop >= 600){
-            if($("#realEstateProjectCard").css('left') === '-2000px'){
-                $("#realEstateProjectCard").css({'left':'0px', 'opacity': 1});
+        if (scrollTop >= 600) {
+            if ($("#realEstateProjectCard").css('left') === '-2000px') {
+                $("#realEstateProjectCard").css({ 'left': '0px', 'opacity': 1 });
             }
         }
 
-        if(scrollTop < 800){
-            if($("#clicGameCard").css('left') === '0px') {
-                $("#clicGameCard").css({'left':'-2000px', 'opacity': 0});
+        if (scrollTop < 800) {
+            if ($("#clicGameCard").css('left') === '0px') {
+                $("#clicGameCard").css({ 'left': '-2000px', 'opacity': 0 });
             }
         }
 
-        if(scrollTop >= 800){
-            if($("#clicGameCard").css('left') === '-2000px'){
-                $("#clicGameCard").css({'left':'0px', 'opacity': 1});
+        if (scrollTop >= 800) {
+            if ($("#clicGameCard").css('left') === '-2000px') {
+                $("#clicGameCard").css({ 'left': '0px', 'opacity': 1 });
             }
         }
 
-        if(scrollTop < 1000){
-            if($("#portfolioPageCard").css('left') === '0px') {
-                $("#portfolioPageCard").css({'left':'-2000px', 'opacity': 0});
+        if (scrollTop < 1000) {
+            if ($("#portfolioPageCard").css('left') === '0px') {
+                $("#portfolioPageCard").css({ 'left': '-2000px', 'opacity': 0 });
             }
         }
 
-        if(scrollTop >= 1000){
-            if($("#portfolioPageCard").css('left') === '-2000px'){
-                $("#portfolioPageCard").css({'left':'0px', 'opacity': 1});
+        if (scrollTop >= 1000) {
+            if ($("#portfolioPageCard").css('left') === '-2000px') {
+                $("#portfolioPageCard").css({ 'left': '0px', 'opacity': 1 });
             }
         }
 
-        if(scrollTop < 5800){
-            if($("#socialLinksBox").css('display') === 'none') {
+        if (scrollTop < 5800) {
+            if ($("#socialLinksBox").css('display') === 'none') {
                 $("#socialLinksBox").css('display', 'flex');
             }
         }
 
-        if(scrollTop >= 5800){
-            if($("#socialLinksBox").css('display') === 'flex'){
+        if (scrollTop >= 5800) {
+            if ($("#socialLinksBox").css('display') === 'flex') {
                 $("#socialLinksBox").css('display', 'none');
             }
         }
@@ -105,8 +135,8 @@ $(function () {
     var divisor = 4;
     //Moving Animation Event
     animatedCard.addEventListener("mousemove", (e) => {
-        let xAxis =  (e.pageX - window.innerWidth/2) / divisor;
-        let yAxis = - (e.pageY - window.innerHeight/2) / 10;
+        let xAxis = (e.pageX - window.innerWidth / 2) / divisor;
+        let yAxis = - (e.pageY - window.innerHeight / 2) / 10;
         animatedCardInner.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
     });
     //Animate In
@@ -123,18 +153,11 @@ $(function () {
     });
 
     function setDivisorForAnimatedCard() {
-        (window.innerWidth <= 1190 && window.innerWidth >= 580)?  divisor = 15 : divisor = 4;
+        (window.innerWidth <= 1190 && window.innerWidth >= 580) ? divisor = 15 : divisor = 4;
         return divisor;
     }
 
-    $( window ).resize(function() {
-        setDivisorForAnimatedCard();
-    });
-
-    $(".closeModalBtn").on('click', function(){
-        $("#projectsModal").fadeOut(200);
-        $("#projectsContent").removeClass("active");
-    })
+    attachEvents();
 })
 
 function textAnimation() {
@@ -178,7 +201,7 @@ function complete() {
 }
 
 function readMore(e) {
-    if($("#firstContentBtn").css('display') === 'none'){
+    if ($("#firstContentBtn").css('display') === 'none') {
         $("#firstContentBtn").show();
         $("#aboutMeTextImage").css("opacity", 1);
         $("#secondText").css("opacity", 0);
@@ -192,15 +215,32 @@ function readMore(e) {
 }
 
 function showProjectModal(item) {
-    switch(item) {
+    switch (item) {
         case 'first':
-            console.log('first');
+            $("#projectModalGitHubLink").attr('href', 'https://github.com/GvidasGVD/realEstatePage.github.io');
+            $("#projectModalDemoLink").attr('href', 'https://gvidasgvd.github.io/realEstatePage.github.io/');
+            $("#projectModalInfoSpecificText").text('Real Estate web page was created using HTML, CSS, JS and jQuery. Main purpose of the page' + 
+            ' is to nicely present the company, which offers to the customers services like: consultation on buying, selling, investing in the' +
+            ' property. Also you can find equities listed as well as agents information and contacts and of course some clients reviews.');
+            $("#projectModalHeader").text('Real Estate Web Page');
+            $("#projectModalImg").attr('src', 'modalImages/nt1.jpg');
             break;
         case 'second':
-            console.log('second');
+            $("#projectModalGitHubLink").attr('href', 'https://github.com/GvidasGVD/clickMoneyGame.github.io');
+            $("#projectModalDemoLink").attr('href', 'https://gvidasgvd.github.io/clickMoneyGame.github.io/');
+            $("#projectModalInfoSpecificText").text('Click game was created using HTML, CSS, JS. Main purpose of the' +
+            ' game is to reach $300 billion in cash by clicking the golden button and buying property, which every second gives' + 
+            ' 10% profit of the equity price.');
+            $("#projectModalHeader").text('Click Game');
+            $("#projectModalImg").attr('src', 'modalImages/game1.jpg');
             break;
         case 'third':
-            console.log('third');
+            $("#projectModalGitHubLink").attr('href', 'https://github.com/GvidasGVD/portfolioPage.github.io');
+            $("#projectModalDemoLink").attr('href', 'https://gvidasgvd.github.io/portfolioPage.github.io/');
+            $("#projectModalInfoSpecificText").text('My portfolio page which provides information about my programming skills, some history' +
+            ' of my working experience, my certifications and studies, and of course projects with the links. Hope you\'ve enjoyed it!');
+            $("#projectModalHeader").text('Portfolio Web Page');
+            $("#projectModalImg").attr('src', 'modalImages/mainPage1.jpg');
             break;
     }
 
@@ -210,6 +250,8 @@ function showProjectModal(item) {
         $("#projectsModal ").css("display", "flex");
     }, 10);
 }
+
+
 
 
 
