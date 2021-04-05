@@ -21,6 +21,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 	<link rel="icon" type="image/png" sizes="16x16" href="images/GPicon.png">
 
+	<link rel="stylesheet" type="text/css" href='https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' />
 	<script type="text/javascript" src="js/javascript.js" defer></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -33,7 +34,8 @@
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
+		<script type="text/javascript" src='https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js'></script>
+	</head>
 
 <body>
 	<aside class="social-links" id="socialLinksBox">
@@ -48,12 +50,22 @@
 		<!-- Start: Property listing Modal -->
 		<div class="popup-modal" id="projectsModal">
 			<div class="popup-modal-content" id="projectsContent">
+	
 				<div class="btnPositionRight">
 					<button class="closeModalBtn">Close</button>
 				</div>
-				<div id="projectInfoBlock">
-					<p>At the momment there is no info on the content
+				<div class="d-flex flex-wrap justify-content-around" id="projectInfoBlock">
+					<img id="projectModalImg" style="width: 100%; height:394px">
+					<p class="project-info-text w-100" id="projectModalHeader"></p>
+					<p class="project-info-text w-100 pt-0" id="projectModalInfoSpecificText">
 					</p>
+					<a href="#" target="_blank" class="no-link-decoration" id="projectModalGitHubLink">
+						<button class="project-modal-link-btn"><i class="fab fa-github black-item pr-2"></i>View on
+							GitHub</button>
+					</a>
+					<a href="#" target="_blank" class="no-link-decoration" id="projectModalDemoLink">
+						<button class="project-modal-link-btn"><i class="fa fa-globe black-item pr-2"></i>View Live
+							Version</button></a>
 				</div>
 			</div>
 		</div>
@@ -207,12 +219,15 @@
 						</div>
 						<div class="projects-info">
 							<h4>Real Estate Web Page</h4>
-							<p>One of the first web pages created as an experiment. This is ongoing project.</p>
+							<p>Real Estate web page - experiment. This is ongoing project.</p>
 							<div><span>HTML </span><span>CSS </span><span>JavaScript </span><span>jQuery </span></div>
-							<a href="https://github.com/GvidasGVD/realEstatePage.github.io" target="_blank">
-								<button class="project-info-link-btn"><i class="fab fa-github black-item"></i>Code</button>
+							<a href="https://github.com/GvidasGVD/realEstatePage.github.io" target="_blank" class="">
+								<button class="project-info-link-btn"><i
+										class="fab fa-github black-item"></i>Code</button>
+							</a>
 							<a href="https://gvidasgvd.github.io/realEstatePage.github.io/" target="_blank">
-								<button class="project-info-link-btn"><i class="fa fa-globe black-item"></i>Demo</button></a>
+								<button class="project-info-link-btn"><i
+										class="fa fa-globe black-item"></i>Demo</button></a>
 						</div>
 					</div>
 					<div class="d-flex flex-wrap py-3 project-card" id="clicGameCard">
@@ -225,9 +240,11 @@
 							<p>One of the first click games that I created couple years ago using HTML, CSS and JS.</p>
 							<div><span>HTML </span><span>CSS </span><span>JavaScript </span></div>
 							<a href="https://github.com/GvidasGVD/clickMoneyGame.github.io" target="_blank">
-								<button class="project-info-link-btn"><i class="fab fa-github black-item"></i>Code</button></a>
+								<button class="project-info-link-btn"><i
+										class="fab fa-github black-item"></i>Code</button></a>
 							<a href="https://gvidasgvd.github.io/clickMoneyGame.github.io/" target="_blank">
-								<button class="project-info-link-btn"><i class="fa fa-globe black-item"></i>Demo</button></a>
+								<button class="project-info-link-btn"><i
+										class="fa fa-globe black-item"></i>Demo</button></a>
 						</div>
 					</div>
 					<div class="d-flex flex-wrap py-3 project-card" id="portfolioPageCard">
@@ -241,8 +258,9 @@
 								"live", I decided to add this page as a project.</p>
 							<div><span>HTML </span><span>CSS </span><span>JavaScript </span><span>jQuery
 								</span><span>Bootstrap</span></div>
-							<a href="http://127.0.0.1:5500/index.html#works" target="_blank">
-								<button class="project-info-link-btn"><i class="fab fa-github black-item"></i>Code</button></a>
+							<a href="https://github.com/GvidasGVD/portfolioPage.github.io" target="_blank">
+								<button class="project-info-link-btn"><i
+										class="fab fa-github black-item"></i>Code</button></a>
 						</div>
 					</div>
 				</div>
@@ -275,20 +293,22 @@
 					</div>
 					<div class="about-me-text">
 						<button id="firstContentBtn" class="more-content-btn"
-						onclick="readMore(this)"><span>more</span></button>
+							onclick="readMore(this)"><span>more</span></button>
 						<img id="aboutMeTextImage">
 						<p id="secondText">After graduation I started to work as a business and corporate clients
 							consultant in Swedbank
 							bank. While working in the bank I got familiar with anti-money laundering field and
-							after some time I decided to widen my knowledge in this field, so I applied for the job as an
+							after some time I decided to widen my knowledge in this field, so I applied for the job as
+							an
 							AML-Comliance specialist and I got the job in Western Union.<br><br>
 							In both jobs I had to use some
 							kind of programming skills like excel functions, VB,
 							AutoHotkey. Since it was very challenging and interesting, I started to learn more
 							programming, took several online courses and received few certificates. And here I am as a
 							Software Systems Developer. </p>
-						<div class='d-flex justify-content-center'><button id="secondContentBtn" class="more-content-btn" onclick="readMore(this)"
-							style="display:none"><span>hide</span></button> </div>	
+						<div class='d-flex justify-content-center'><button id="secondContentBtn"
+								class="more-content-btn" onclick="readMore(this)"
+								style="display:none"><span>hide</span></button> </div>
 					</div>
 				</div>
 			</div>
