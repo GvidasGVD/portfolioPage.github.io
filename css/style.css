@@ -10,6 +10,7 @@ body{
     height: 100vh;
     font-family: "Roboto", sans-serif;
     overflow: hidden;
+	min-width: 400px;
 }
 
 #mainPageBlock {
@@ -130,7 +131,9 @@ section {
 #projectsContent {
 	-webkit-transform: scale(0);
 	transform: scale(0);
-	width: 700px;
+	overflow: auto;
+	width: 40%;
+	max-height: 90%;
 	box-shadow: 0 0 3px 2px #7d8ee2;
 	border-radius: 12px;
 	background-color: rgb(51,51,51);
@@ -145,11 +148,6 @@ section {
     align-items: center;
     text-align: left;
 	color: rgb(182, 181, 181);
-}
-
-#projectInfoBlock img {
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
 }
 
 .btnPositionRight {
@@ -194,7 +192,7 @@ section {
 	align-items: center;
 	border-radius: 10px;
 	transition: 0.05s;
-	font-size: 25px;
+	font-size: 18px;
 	text-decoration: none;
 }
 
@@ -211,6 +209,36 @@ section {
 .project-info-text {
 	padding: 20px;
 	line-height: 1.5;
+}
+
+.projectImgIconBtns {
+	background-color: rgba(90, 90, 90, 0.7);
+	padding: 10px 0;
+	text-align: center;
+	top: 92%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+}
+
+.projectCircle{
+	cursor: pointer;
+	width: 15px;
+	height: 15px;
+	border: 3px solid white;
+	border-radius: 50px;
+}
+
+.projectCircle:hover{
+	background-color: white;
+}
+
+#projectModalTop {
+	transition: 0.5s;
+	background-size: cover;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	height: 394px;
 }
 
 /* end: popup-modal */
@@ -565,6 +593,7 @@ header ul.is-sticky li a.active {
 	left: -2000px;
 	opacity: 0;
 	transition: 0.7s ease-in-out;
+	flex-wrap: nowrap;
 }
 
 .project-card {
