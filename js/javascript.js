@@ -214,35 +214,49 @@ function readMore(e) {
     $(e).hide();
 }
 
+var projectModalItem = 'first';
+var projectModalTimer;
+
+function setProjectModaltimer(){
+    projectModalTimer = setInterval(modalTimer, 4000);
+}
+
+function modalTimer() {
+    setProjectModalPicture(imageNoProjectModal);
+}
+
+function projectModalStopTimer() {
+    clearInterval(projectModalTimer);
+}
+
 function showProjectModal(item) {
+    projectModalItem = item;
     switch (item) {
         case 'first':
             $("#projectModalGitHubLink").attr('href', 'https://github.com/GvidasGVD/realEstatePage.github.io');
             $("#projectModalDemoLink").attr('href', 'https://gvidasgvd.github.io/realEstatePage.github.io/');
-            $("#projectModalInfoSpecificText").text('Real Estate web page was created using HTML, CSS, JS and jQuery. Main purpose of the page' + 
-            ' is to nicely present the company, which offers to the customers services like: consultation on buying, selling, investing in the' +
-            ' property. Also you can find equities listed as well as agents information and contacts and of course some clients reviews.');
+            $("#projectModalInfoSpecificText").text('Real Estate web page was created using HTML, CSS, JS and jQuery. Main purpose of the page' +
+                ' is to nicely present the company, which offers to the customers services like: consultation on buying, selling, investing in the' +
+                ' property. Also you can find equities listed as well as agents information and contacts and of course some clients reviews.');
             $("#projectModalHeader").text('Real Estate Web Page');
-            $("#projectModalImg").attr('src', 'https://gvidasgvd.github.io/portfolioPage.github.io/modalImages/nt1.jpg');
             break;
         case 'second':
             $("#projectModalGitHubLink").attr('href', 'https://github.com/GvidasGVD/clickMoneyGame.github.io');
             $("#projectModalDemoLink").attr('href', 'https://gvidasgvd.github.io/clickMoneyGame.github.io/');
             $("#projectModalInfoSpecificText").text('Click game was created using HTML, CSS, JS. Main purpose of the' +
-            ' game is to reach $300 billion in cash by clicking the golden button and buying property, which every second gives' + 
-            ' 10% profit of the equity price.');
+                ' game is to reach $300 billion in cash by clicking the golden button and buying property, which every second gives' +
+                ' 10% profit of the equity price.');
             $("#projectModalHeader").text('Click Game');
-            $("#projectModalImg").attr('src', 'https://gvidasgvd.github.io/portfolioPage.github.io/modalImages/game1.jpg');
             break;
         case 'third':
             $("#projectModalGitHubLink").attr('href', 'https://github.com/GvidasGVD/portfolioPage.github.io');
             $("#projectModalDemoLink").attr('href', 'https://gvidasgvd.github.io/portfolioPage.github.io/');
             $("#projectModalInfoSpecificText").text('My portfolio page which provides information about my programming skills, some history' +
-            ' of my working experience, my certifications and studies, and of course projects with the links. Hope you\'ve enjoyed it!');
+                ' of my working experience, my certifications and studies, and of course projects with the links. Hope you\'ve enjoyed it!');
             $("#projectModalHeader").text('Portfolio Web Page');
-            $("#projectModalImg").attr('src', 'https://gvidasgvd.github.io/portfolioPage.github.io/modalImages/mainPage1.jpg');
             break;
     }
+    setProjectModalPicture(0);
 
     $(".popup-modal").show();
     setTimeout(function () {
@@ -250,6 +264,30 @@ function showProjectModal(item) {
         $("#projectsModal ").css("display", "flex");
     }, 10);
 }
+
+const realEstateProjectModalImages = ['modalImages/nt1.jpg', 'modalImages/nt7.jpg', 'modalImages/nt5.jpg', 'modalImages/nt6.jpg'];
+const clickGameProjectModalImages = ['modalImages/game1.jpg', 'modalImages/game2.jpg', 'modalImages/game3.jpg', 'modalImages/game4.jpg'];
+const mainPortfolioProjectModalImages = ['modalImages/mainPage7.jpg', 'modalImages/mainPage3.jpg', 'modalImages/mainPage4.jpg', 'modalImages/mainPage5.jpg'];
+const baseURL = "url('https://gvidasgvd.github.io/portfolioPage.github.io/modalImages/";
+var imageNoProjectModal = 0
+function setProjectModalPicture(item = imageNoProjectModal) {
+    projectModalStopTimer();
+    var section = $("#projectModalTop");
+    if (projectModalItem === 'first') {
+        section.css('background-image', baseURL + realEstateProjectModalImages[item] + "'")
+    } else if (projectModalItem === 'second') {
+        section.css('background-image', baseURL + clickGameProjectModalImages[item] + "'")
+    } else if (projectModalItem === 'third') {
+        section.css('background-image', baseURL + mainPortfolioProjectModalImages[item] + "'")
+    }
+    imageNoProjectModal++;
+    if (imageNoProjectModal >= 4) {
+        imageNoProjectModal = 0;
+    }
+    setProjectModaltimer();
+}
+
+
 
 
 
