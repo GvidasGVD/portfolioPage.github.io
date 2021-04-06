@@ -55,7 +55,14 @@
 					<button class="closeModalBtn">Close</button>
 				</div>
 				<div class="d-flex flex-wrap justify-content-around" id="projectInfoBlock">
-					<img id="projectModalImg" style="width: 100%; height:394px">
+					<div class="position-relative" id="projectModalTop" style="width: 100%;">
+						<div class="d-flex flex-wrap position-absolute justify-content-center projectImgIconBtns" >
+							<div class="projectCircle" onclick="setProjectModalPicture(0)"></div>
+							<div class="mx-3 projectCircle" onclick="setProjectModalPicture(1)"></div>
+							<div class="mr-3 projectCircle" onclick="setProjectModalPicture(2)"></div>
+							<div class="projectCircle" onclick="setProjectModalPicture(3)"></div>
+						</div>
+					</div>
 					<p class="project-info-text w-100" id="projectModalHeader"></p>
 					<p class="project-info-text w-100 pt-0" id="projectModalInfoSpecificText">
 					</p>
@@ -212,7 +219,7 @@
 			<div class='flex container'>
 				<div>
 					<h3>Projects</h3>
-					<div class="d-flex flex-wrap py-3 project-card" id="realEstateProjectCard">
+					<div class="d-flex py-3 project-card" id="realEstateProjectCard">
 						<div class="project-card-left-side" onclick="showProjectModal('first')">
 						<div class="blured-left-side"></div>
 						<img src="https://gvidasgvd.github.io/portfolioPage.github.io/images/webPagePicture.jpg">
@@ -230,7 +237,7 @@
 										class="fa fa-globe black-item"></i>Demo</button></a>
 						</div>
 					</div>
-					<div class="d-flex flex-wrap py-3 project-card" id="clicGameCard">
+					<div class="d-flex py-3 project-card" id="clicGameCard">
 						<div class="project-card-left-side" onclick="showProjectModal('second')">
 						<div class="blured-left-side"></div>
 						<img src="https://gvidasgvd.github.io/portfolioPage.github.io/images/gameImage.jpg">
@@ -247,7 +254,7 @@
 										class="fa fa-globe black-item"></i>Demo</button></a>
 						</div>
 					</div>
-					<div class="d-flex flex-wrap py-3 project-card" id="portfolioPageCard">
+					<div class="d-flex py-3 project-card" id="portfolioPageCard">
 						<div class="project-card-left-side" onclick="showProjectModal('third')">
 						<div class="blured-left-side"></div>
 						<img src="https://gvidasgvd.github.io/portfolioPage.github.io/images/mainPage.jpg">
