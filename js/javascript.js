@@ -265,9 +265,9 @@ function showProjectModal(item) {
     }, 10);
 }
 
-const realEstateProjectModalImages = ['modalImages/nt1.jpg', 'modalImages/nt7.jpg', 'modalImages/nt5.jpg', 'modalImages/nt6.jpg'];
-const clickGameProjectModalImages = ['modalImages/game1.jpg', 'modalImages/game2.jpg', 'modalImages/game3.jpg', 'modalImages/game4.jpg'];
-const mainPortfolioProjectModalImages = ['modalImages/mainPage7.jpg', 'modalImages/mainPage3.jpg', 'modalImages/mainPage4.jpg', 'modalImages/mainPage5.jpg'];
+const realEstateProjectModalImages = ['nt1.jpg', 'nt7.jpg', 'nt5.jpg', 'nt6.jpg'];
+const clickGameProjectModalImages = ['game1.jpg', 'game2.jpg', 'game3.jpg', 'game4.jpg'];
+const mainPortfolioProjectModalImages = ['mainPage7.jpg', 'mainPage3.jpg', 'mainPage4.jpg', 'mainPage5.jpg'];
 const baseURL = "url('https://gvidasgvd.github.io/portfolioPage.github.io/modalImages/";
 var imageNoProjectModal = 0
 function setProjectModalPicture(item = imageNoProjectModal) {
