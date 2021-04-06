@@ -63,4 +63,18 @@
 	#skillsHelpText {
 		display: inline-block;
 	}
+
+	#realEstateProjectCard,
+	#clicGameCard,
+	#portfolioPageCard {
+		flex-wrap: wrap;
+	}
+
+	#projectsContent {
+		width: 90%;
+	}
+
+	#projectModalTop {
+		height: 280px;
+	}
 }
