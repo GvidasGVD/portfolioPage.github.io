@@ -132,7 +132,7 @@ section {
 	-webkit-transform: scale(0);
 	transform: scale(0);
 	overflow: auto;
-	width: 40%;
+	width: 600px;
 	max-height: 90%;
 	box-shadow: 0 0 3px 2px #7d8ee2;
 	border-radius: 12px;
@@ -207,7 +207,7 @@ section {
 }
 
 .project-info-text {
-	padding: 20px;
+	padding: 10px 20px;
 	line-height: 1.5;
 }
 
@@ -226,7 +226,7 @@ section {
 	width: 15px;
 	height: 15px;
 	border: 3px solid white;
-	border-radius: 50px;
+	border-radius: 50%;
 }
 
 .projectCircle:hover{
@@ -238,7 +238,8 @@ section {
 	background-size: cover;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
-	height: 394px;
+	height: 280px;
+	width: 600px;
 }
 
 /* end: popup-modal */
