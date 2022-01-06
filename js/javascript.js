@@ -74,6 +74,18 @@ $(function () {
         }
 
         if (scrollTop < 600) {
+            if ($("#strategySurvivalGameProjectCard").css('left') === '0px') {
+                $("#strategySurvivalGameProjectCard").css({ 'left': '-2000px', 'opacity': 0 });
+            }
+        }
+
+        if (scrollTop >= 600) {
+            if ($("#strategySurvivalGameProjectCard").css('left') === '-2000px') {
+                $("#strategySurvivalGameProjectCard").css({ 'left': '0px', 'opacity': 1 });
+            }
+        }
+
+        if (scrollTop < 600) {
             if ($("#realEstateProjectCard").css('left') === '0px') {
                 $("#realEstateProjectCard").css({ 'left': '-2000px', 'opacity': 0 });
             }
@@ -254,6 +266,12 @@ function showProjectModal(item) {
             $("#projectModalInfoSpecificText").text('My portfolio page which provides information about my programming skills, some history' +
                 ' of my working experience, my certifications and studies, and of course projects with the links. Hope you\'ve enjoyed it!');
             $("#projectModalHeader").text('Portfolio Web Page');
+        case 4: 
+            $("#projectModalGitHubLink").attr('href', 'https://github.com/GvidasGVD/strategy-survival-game/tree/master');
+            $("#projectModalDemoLink").attr('href', 'https://gvidasgvd.github.io/strategy-survival-game/');
+            $("#projectModalInfoSpecificText").text('"Strategy survival game" created with ReactJS mainly using hooks. App also includes ' +
+                'usage of SCSS, as well as react-icons, react-tooltips, react portals and maping.');
+            $("#projectModalHeader").text('Strategy Survival Game');
             break;
     }
     setProjectModalPicture(0);
@@ -268,6 +286,7 @@ function showProjectModal(item) {
 const realEstateProjectModalImages = ['nt1.jpg', 'nt7.jpg', 'nt5.jpg', 'nt6.jpg'];
 const clickGameProjectModalImages = ['game1.jpg', 'game2.jpg', 'game3.jpg', 'game4.jpg'];
 const mainPortfolioProjectModalImages = ['mainPage7.jpg', 'mainPage3.jpg', 'mainPage4.jpg', 'mainPage5.jpg'];
+const strategyGameProjectModalImages = ['ssgame1.jpg', 'ssgame2.jpg', 'ssgame3.jpg', 'ssgame4.jpg'];
 const baseURL = "url('https://gvidasgvd.github.io/portfolioPage.github.io/modalImages/";
 var imageNoProjectModal = 0
 function setProjectModalPicture(item = imageNoProjectModal) {
@@ -279,6 +298,8 @@ function setProjectModalPicture(item = imageNoProjectModal) {
         section.css('background-image', baseURL + clickGameProjectModalImages[item] + "'")
     } else if (projectModalItem === 'third') {
         section.css('background-image', baseURL + mainPortfolioProjectModalImages[item] + "'")
+    } else if (projectModalItem === 4) {
+        section.css('background-image', baseURL + strategyGameProjectModalImages[item] + "'")
     }
     imageNoProjectModal++;
     if (imageNoProjectModal >= 4) {
