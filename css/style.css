@@ -588,14 +588,7 @@ header ul.is-sticky li a.active {
 	text-decoration: none;
 }
 
-#realEstateProjectCard,
-#clicGameCard,
-#portfolioPageCard{
-	left: -2000px;
-	opacity: 0;
-	transition: 0.7s ease-in-out;
-	flex-wrap: nowrap;
-}
+
 
 .project-card {
 	position: relative;
@@ -604,6 +597,10 @@ header ul.is-sticky li a.active {
 	margin: 20px 0;
 	border-radius: 5px;
 	box-shadow: 4px 4px 4px 2px black;
+	left: -2000px;
+	opacity: 0;
+	transition: 0.7s ease-in-out;
+	flex-wrap: nowrap;
 }
 
 .blured-left-side {
