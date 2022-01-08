@@ -73,37 +73,51 @@ $(function () {
             navToggle.find('.strip').css('background-color', '#fff');
         }
 
+
+
         if (scrollTop < 600) {
+            if ($("#userWebAppProjectCard").css('left') === '0px') {
+                $("#userWebAppProjectCard").css({ 'left': '-2000px', 'opacity': 0 });
+            }
+        }
+
+        if (scrollTop >= 600) {
+            if ($("#userWebAppProjectCard").css('left') === '-2000px') {
+                $("#userWebAppProjectCard").css({ 'left': '0px', 'opacity': 1 });
+            }
+        }
+
+        if (scrollTop < 700) {
             if ($("#strategySurvivalGameProjectCard").css('left') === '0px') {
                 $("#strategySurvivalGameProjectCard").css({ 'left': '-2000px', 'opacity': 0 });
             }
         }
 
-        if (scrollTop >= 600) {
+        if (scrollTop >= 700) {
             if ($("#strategySurvivalGameProjectCard").css('left') === '-2000px') {
                 $("#strategySurvivalGameProjectCard").css({ 'left': '0px', 'opacity': 1 });
             }
         }
 
-        if (scrollTop < 600) {
+        if (scrollTop < 800) {
             if ($("#realEstateProjectCard").css('left') === '0px') {
                 $("#realEstateProjectCard").css({ 'left': '-2000px', 'opacity': 0 });
             }
         }
 
-        if (scrollTop >= 600) {
+        if (scrollTop >= 800) {
             if ($("#realEstateProjectCard").css('left') === '-2000px') {
                 $("#realEstateProjectCard").css({ 'left': '0px', 'opacity': 1 });
             }
         }
 
-        if (scrollTop < 800) {
+        if (scrollTop < 900) {
             if ($("#clicGameCard").css('left') === '0px') {
                 $("#clicGameCard").css({ 'left': '-2000px', 'opacity': 0 });
             }
         }
 
-        if (scrollTop >= 800) {
+        if (scrollTop >= 900) {
             if ($("#clicGameCard").css('left') === '-2000px') {
                 $("#clicGameCard").css({ 'left': '0px', 'opacity': 1 });
             }
@@ -234,7 +248,7 @@ function setProjectModaltimer(){
 }
 
 function modalTimer() {
-    setProjectModalPicture(imageNoProjectModal);
+    setProjectModalPicture(imageNoProjectModal = 0);
 }
 
 function projectModalStopTimer() {
@@ -266,13 +280,21 @@ function showProjectModal(item) {
             $("#projectModalInfoSpecificText").text('My portfolio page which provides information about my programming skills, some history' +
                 ' of my working experience, my certifications and studies, and of course projects with the links. Hope you\'ve enjoyed it!');
             $("#projectModalHeader").text('Portfolio Web Page');
+            break;
         case 4: 
             $("#projectModalGitHubLink").attr('href', 'https://github.com/GvidasGVD/strategy-survival-game/tree/master');
             $("#projectModalDemoLink").attr('href', 'https://gvidasgvd.github.io/strategy-survival-game/');
             $("#projectModalInfoSpecificText").text('"Strategy survival game" created with ReactJS mainly using hooks. App also includes ' +
                 'usage of SCSS, as well as react-icons, react-tooltips, react portals and maping.');
             $("#projectModalHeader").text('Strategy Survival Game');
-            break;
+        break;
+        case 5: 
+            $("#projectModalGitHubLink").attr('href', 'https://github.com/GvidasGVD/ReactUsersApp/tree/master');
+            $("#projectModalDemoLink").attr('href', 'https://gvidasgvd.github.io/ReactUsersApp/');
+            $("#projectModalInfoSpecificText").text('Users Web App with CRUD functionality created with React.js mainly using hooks. App also includes ' +
+                'usage of react-router-dom, Context, Reducer, Callback, History, Location, Link, Ref. For from validation used yup. Connection functions with the Firebase commented.');
+            $("#projectModalHeader").text('Users Web App');
+        break;
     }
     setProjectModalPicture(0);
 
@@ -287,6 +309,7 @@ const realEstateProjectModalImages = ['nt1.jpg', 'nt7.jpg', 'nt5.jpg', 'nt6.jpg'
 const clickGameProjectModalImages = ['game1.jpg', 'game2.jpg', 'game3.jpg', 'game4.jpg'];
 const mainPortfolioProjectModalImages = ['mainPage7.jpg', 'mainPage3.jpg', 'mainPage4.jpg', 'mainPage5.jpg'];
 const strategyGameProjectModalImages = ['ssgame1.jpg', 'ssgame2.jpg', 'ssgame3.jpg', 'ssgame4.jpg'];
+const usersAppProjectModalImages = ['usersApp1.jpg', 'usersApp2.jpg', 'usersApp3.jpg', 'usersApp4.jpg'];
 const baseURL = "url('https://gvidasgvd.github.io/portfolioPage.github.io/modalImages/";
 var imageNoProjectModal = 0
 function setProjectModalPicture(item = imageNoProjectModal) {
@@ -300,6 +323,8 @@ function setProjectModalPicture(item = imageNoProjectModal) {
         section.css('background-image', baseURL + mainPortfolioProjectModalImages[item] + "'")
     } else if (projectModalItem === 4) {
         section.css('background-image', baseURL + strategyGameProjectModalImages[item] + "'")
+    } else if (projectModalItem === 5) {
+        section.css('background-image', baseURL + usersAppProjectModalImages[item] + "'")
     }
     imageNoProjectModal++;
     if (imageNoProjectModal >= 4) {
