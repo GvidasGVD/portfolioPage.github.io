@@ -64,9 +64,7 @@
 		display: inline-block;
 	}
 
-	#realEstateProjectCard,
-	#clicGameCard,
-	#portfolioPageCard {
+	.project-card {
 		flex-wrap: wrap;
 	}
 
